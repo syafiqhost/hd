@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hacked</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div id="terminal">
+        <div id="output"></div>
+        <div id="input-container">
+            <span>&gt; </span><span id="input"></span>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Function to enter fullscreen mode
+        function enterFullscreen() {
+            if (document.documentElement.requestFullscreen) {
+                document.documentElement.requestFullscreen();
+            } else if (document.documentElement.mozRequestFullScreen) { // Firefox
+                document.documentElement.mozRequestFullScreen();
+            } else if (document.documentElement.webkitRequestFullscreen) { // Chrome and Safari
+                document.documentElement.webkitRequestFullscreen();
+            } else if (document.documentElement.msRequestFullscreen) { // IE/Edge
+                document.documentElement.msRequestFullscreen();
+            }
+        }
+
+        // Function to handle click event and exit page (or redirect)
+        function handleClick() {
+            // Redirect to a different page (or close the window)
+            window.location.href = 'https://www.google.com'; // Ganti URL sesuai kebutuhan Anda
+        }
+
+        // When the page loads, we enter fullscreen
+        window.onload = function() {
+            enterFullscreen();
+        };
+
+        // Add event listener for any click on the page to redirect user
+        document.addEventListener('click', handleClick);
+    </script>
+</body>
+
+</html>
